@@ -261,8 +261,8 @@ jobs:
         shell: bash
         run: |
           VERSION=nightly
+          IMAGE_TAG=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${VERSION}-speedb
           echo "VERSION=${VERSION}" >> $GITHUB_ENV
-          IMAGE_TAG=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}-speedb
           echo "IMAGE_TAG=${IMAGE_TAG}" >> $GITHUB_ENV
 
       - name: Build the Docker image
